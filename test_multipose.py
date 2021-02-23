@@ -99,7 +99,7 @@ if __name__ == '__main__':
         render_layer = TestRender(opt)
         render_layer_list.append(render_layer)
 
-    opt.gpu_ids = list(range(0, ngpus - opt.render_thread))
+    opt.gpu_ids = list(range(ngpus - opt.render_thread, ngpus))
     print('Testing gpu ', opt.gpu_ids)
     if opt.names is None:
         model = TestModel(opt)
